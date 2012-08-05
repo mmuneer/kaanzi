@@ -1,0 +1,46 @@
+<div class="yelp-result-set">
+	
+<% if @results[:data].blank? %>
+	<p>No results found.</p>
+<% else %>
+<div id="more-link">	
+		<%= link_to 'More',@results[:url], :class=>'more' %>
+</div>
+<% end %>	
+
+<% @results[:data].each do |result| %>
+<div class="result-item">
+	<div class="left-column">
+		<% if result["image_url"].blank? %>
+			<%= image_tag('no_image.gif',:size=>'100x100', :border=>0)%>
+		<% else %>
+			<%= image_tag "#{result["image_url"]}"%>
+		<% end %>
+	</div>
+	<div class="middle-column">
+		<h4><%= link_to result["name"], result["url"] %></h4>
+		<div class="rating"><%= image_tag(result["rating_img_url"].split("/").last) %></div>
+		<span class="reviews"><%= result["review_count"].to_s + " "%> reviews</span>
+		<address>
+   			<%= result["location"]["display_address"].join(", ") %>
+   			<div class="phone">
+   				<%= image_tag('phone.png',:size=>'16x16', :border=>0) %><span><%= result["display_phone"] %></span>
+   			</div>
+   		</address>
+   		
+	</div> 
+	
+	<div class="right-column">
+		<ul>
+			<!--<li><%= link_to image_tag('places.jpg', :size=>'30x30') %></li>
+			<li><%= link_to image_tag('_0044_Facebook.png', :size=>'32x32') %></li>
+			<li><%= link_to image_tag('twitter.png', :size=>'32x32') %></li>
+			<li><%= link_to image_tag('mail-icon.png', :size=>'32x32') %></li>-->
+			<li><%= image_tag "http://maps.google.com/maps/api/staticmap?size=250x100&sensor=false&zoom=16&markers=#{result["location"]["coordinate"]["latitude"]}%2C#{result["location"]["coordinate"]["longitude"]}" %></li>
+		</ul>
+	</div>  
+	
+</div>
+<%end%>
+
+</div>

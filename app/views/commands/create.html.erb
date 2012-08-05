@@ -1,0 +1,14 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<%#= "create.html.erb" %>
+  <%if @output.split.first.eql?('launchSite') %>
+    <% Launchy.open("#{@output.split.last}") %>
+    <%= "Page opened #{@output.split.last}"%>
+  <%else%>
+
+    <%= simple_format @output %>
+
+<%end%>

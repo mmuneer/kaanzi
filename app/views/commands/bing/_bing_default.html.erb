@@ -1,0 +1,14 @@
+<div class="calculate_main">
+  
+  <% @results[:data]["SearchResponse"]["Web"]["Results"].each_with_index do |item, i| %>
+    <p>
+      <div style="width: 590px;">
+      	<div id="bing-results" style="color: #0044CC;"><%= link_to item["Title"], item["Url"], :target=>"_blank" %>	</div>
+	    <%= item["Description"]%><br/>
+	    <span style="color: #388222;"><%= item["DisplayUrl"]%></span>
+	  </div>
+	</p>
+  <% end %>
+  
+  <h3></h3>
+</div>

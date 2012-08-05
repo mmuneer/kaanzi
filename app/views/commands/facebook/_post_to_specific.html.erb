@@ -1,0 +1,4 @@
+<h3>Multiple matches found</h3>
+<% @results[:data].each_with_index do |item, i| %>
+  <p><%= i + 1 %> <%= item.name %></p>
+<% end %>

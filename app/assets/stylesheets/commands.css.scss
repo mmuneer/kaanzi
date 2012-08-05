@@ -1,0 +1,1118 @@
+/***** Ajax indicator ******/
+#ajax-indicator {
+  /*position: absolute; */  /* fixed not supported by IE */
+  background-color:#eee;
+  border: 1px solid #bbb;
+  margin-top:70px;
+  width:15%;
+  font-weight:bold;
+  text-align:center;
+  padding:0.6em;
+  filter:alpha(opacity=50);
+  opacity: .7;
+  z-index:100;
+  position:relative;
+
+}
+
+html>body #ajax-indicator { /*position: fixed;*/ }
+
+#ajax-indicator span {
+  background-position: 0% 40%;
+  background-repeat: no-repeat;
+  background-image: url('ajax-loader.gif');
+  padding-left: 26px;
+  vertical-align: bottom;
+}
+
+ul.ui-autocomplete {
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  box-shadow:0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: default;
+  font-size:13px;
+  margin-left:-2px;
+  li {
+    background-color: #FFF;
+    
+    margin-left: -3px;
+    border-left: 1px solid #eee;
+    padding: 0;
+    a {
+      color: #000;
+      display: block;
+      padding: 5px;
+    }
+    a.ui-state-hover, a.ui-state-active {
+      background-color: #D4CeC7;
+      cursor:pointer;
+    }
+  }
+} 
+
+#commands_controller{
+	input[type="text"] {	
+		
+		background: transparent;
+		border: medium none;
+		height: 1px;
+		outline: medium none;
+		padding: 0px;
+		width: 1px;
+		text-shadow: 1px 1px #fff;
+		font-size: 16px;
+		letter-spacing:3px;
+		color: white;
+	}
+	#prompt-display{
+		line-height: 16px;
+		font-family: Courier New,monospace;
+		font-size: 14px;
+	}
+	
+	#tutorial{
+    font-family: sans-serif;
+    font-size: 0.8em;
+    ul{
+      list-style: square;
+    }
+  }
+	
+	.cursor-span-unblink
+	{
+		background: gray;
+		border: 1px solid gray;	
+		line-height:18px;
+		display:inline-block;		
+	}
+
+	.cursor-span-blink
+	{
+		background: transparent;
+		border: 1px solid gray;
+		line-height:18px;		
+		display:inline-block;				
+	}
+
+	
+	label{		   
+		 text-shadow: 1px 1px #fff; 
+		 font-size:14px;
+		 vertical-align:text-bottom;
+	}
+	
+	#ouput{
+	  margin-top:180px;
+	}
+	#input-container{
+	  margin-top:1px;
+	  position:absolute;
+	  margin-left:-4px;
+	  a{
+	    flaot:left;
+	    margin-top:20px;
+	  }
+	}
+	#command-box-container{
+		clear: both;
+		float: left;
+		margin-top: 20px;
+		padding: 1px 1px 1px 15px;
+		width: 100%;
+	}
+	
+	
+	#yelp-input-container{
+	    clear:both;  
+		margin-left: 80px;
+		margin-top: 20px;
+		width: 325px;
+		z-index: 100;
+		position:absolute;
+    .business-name{
+      border:none;width:95px;height:25px;
+    }
+    .business-address{
+      border:none;width:135px;height:25px;
+    }
+	  
+	}
+	
+	
+	
+
+
+	/* ##################### History styles ############################### */
+
+	.history-result{
+	  padding-left:8px;
+		table{
+		
+			width: 99%;
+			padding: 2px;
+			color: #555555;
+		
+		
+		}
+		
+		table tr{
+			padding:3px;
+			border-bottom:1px solid #000;
+		}
+		
+		table tr td {
+			padding:5px;
+			text-align:left;
+			width:250px;
+			border-bottom: 1px solid #CCCCCC;
+			font-size: 11px;
+		}
+		
+		
+		table tr td a{
+			color: #0084b4;
+			cursor: pointer;
+			text-decoration: none; 
+			font-size:12px;
+		}
+		
+		table tr td a:hover{		
+			text-decoration: underline;
+		}
+	}
+
+	/* ##################### Bookmark styles ############################### */
+	.ui-dialog{
+	  background:#fff;
+	}
+	
+	#create_event{
+
+	   margin-top: -20px;
+	
+		input[type="text"] 
+		{
+			  border: 1px solid #DDDDDD;
+			  border-radius: 3px;
+			  box-shadow: 0 0 4px #AAAAAA;
+			  -moz-box-shadow: 0 0 4px #AAAAAA;
+			  -webkit-box-shadow: 0 0 4px #AAAAAA;
+			  font-size: 14px;
+			  height: 20px;
+			  outline: medium none;
+			  padding: 8px;
+			  text-shadow: 0 1px 0 #FFFFFF; 
+			  margin-top:5px;
+			  width: 220px;
+			  cursor:text;  
+			  color:#000;
+			  
+		}
+		 input[type="text"]:focus{
+		   box-shadow: 0 0 4px #121212;
+		  -moz-box-shadow: 0 0 4px #121212;
+		  -webkit-box-shadow: 0 0 4px #AAAAAA;
+		}
+    
+	
+		label{
+			  font-size: 15px;      
+			  padding: 5px;
+			  text-shadow: 0 1px 0 #FFFFFF; 
+			  margin-top:5px;     
+		}
+		input[type="submit"]{
+		  background-color: #917C6F; /*#BF3211;*/
+		  border: medium none;
+		  border-radius: 2px;
+		  color: #F0EFD1;
+		  padding: 8px;
+		  width: 90px;
+		  cursor:pointer;   
+		  box-shadow: 0 0 2px #121212;
+		  -moz-box-shadow: 0 0 2px #121212;
+		  -webkit-box-shadow: 0 0 2px #AAAAAA;          
+		}
+	}
+	
+	.ui-dialog
+	{
+		/*display: block;
+		height: 180px;
+		left: 1066px;
+		outline: 0 none;
+		position: absolute;
+		top: 172px;
+		width: 250px;
+		z-index: 1002;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+		-moz-box-shadow: 0 0 5px 5px #888;
+		-webkit-box-shadow: 0 0 5px 5px#888;
+		box-shadow: 0 0 5px 5px #888;
+		background: #eee;
+		padding:15px 15px 0 20px;*/
+		background: -moz-linear-gradient(0% 40% 90deg, #FFFFFF, #EEEEEE) repeat scroll 0 0 transparent;
+		border: 1px solid #DDDDDD;
+		border-radius: 10px 10px 10px 10px;
+		box-shadow: 0 0 50px #CCCCCC;   
+		-webkit-box-shadow: 0 0 50px #CCCCCC;
+		margin: 50px auto;
+		padding: 30px 40px 20px;
+		width: 515px;    
+		height:250px;	
+		overflow:hidden;
+	}
+	.ui-dialog-titlebar { 
+		cursor: move; 
+		float:right; 
+		margin-right: -30px;
+        margin-top: -27px;
+	
+	}
+	.ui-dialog-titlebar  a{
+		  background: #917C6F;
+          border-radius: 20px 20px 20px 20px;
+          -moz-border-radius: 20px 20px 20px 20px;
+          -webkit-border-radius: 20px 20px 20px 20px;
+          color: #FFFFFF;
+          font-size: 13px;
+          padding: 4px 8px;
+          text-decoration:none;
+	}
+	.ui-dialog-titlebar  a:hover{
+		color:#000;
+	}
+	
+	.bing-results{
+	  a{
+	    color:#0044CC;
+	  }
+	}
+	
+	/* ##################### Bookmark styles ############################### */
+	
+
+            
+   /* ############# Twitter Styles ################### */
+  #twitter_stream_result{
+    display:inline-block;
+    width:97.6%;
+      .content-header {
+          background-clip: padding-box;
+          border-left: 1px solid rgba(0, 0, 0, 0.1);
+          border-radius: 6px 6px 0 0;
+          border-right: 1px solid rgba(0, 0, 0, 0.1);
+          border-top: 1px solid rgba(0, 0, 0, 0.1);
+          width:97%;
+          
+          .header-inner {
+                background-color: #FFFFFF;
+                border-bottom: 1px solid #E8E8E8;
+                border-radius: 5px 5px 0 0;
+                min-height: 20px;
+                padding: 12px;
+                h2 {
+                    font-size: 18px;
+                    font-weight: bold;
+                    line-height: 20px;
+                    margin:0;
+                }
+           }        
+        }
+        
+        .stream_container{
+          width:97.1%;
+          margin-bottom:20px;
+          .stream_item{
+                background: #FFFFFF;
+                border-left: 1px solid rgba(0, 0, 0, 0.1);
+                border-right: 1px solid rgba(0, 0, 0, 0.1);
+                border-bottom: 1px solid #E8E8E8;
+                padding:12px;
+                clear:both;
+                min-height:55px;
+                .user-name{
+                    color: #999999;
+                    font-size: 12px;
+                }
+                .twitter-profile-img{
+                  clear:both;
+                  float:left;
+                }
+                p.tweet{
+                  margin:0;
+                  word-wrap: break-word;
+                  cursor:pointer;
+                }
+                img{                  
+                  border-radius: 5px 5px 0 0;
+                }
+                a{
+                    text-decoration:none;
+                    color: #0084B4;
+                    font-weight: bold;
+                }
+                a:hover{
+                  text-decoration:underline;
+                  color:#917C6F;
+                }
+          }
+        }
+ 
+      
+      
+      
+      
+      
+      
+      
+  }/* Twitter style ends */
+ 
+ 
+ /* ############ Facebook related styles ############### */
+      .select-specific-person{
+        font-size:12px;
+        margin-right:20px;
+        h3{
+          color:#333;
+          margin-left:16px;
+        }
+        ul{
+          margin-left:-25px;
+        }
+        
+        li{          
+          border:1px solid #eee;
+          border-left:3px solid #eee;
+          margin-bottom:2px;
+        }
+        li:hover{
+          background: #E7EBF2;
+          color: #3B5998;  
+          border-left:3px solid #ccc;
+        }
+        a{
+          text-decoration:none;
+          padding:10px;
+          display:block;
+          cursor:pointer;
+        }
+          a:hover{
+            color: #3B5998;
+            text-decoration:underline;            
+          }
+      }
+
+
+
+
+    #simple-list{
+        
+        font-size:12px;
+        margin-right:20px;
+        
+        #paginatedList-nav{
+          margin-top:8px;
+        }
+        
+        
+        /* default styling for pagination
+        ----------------------------------------------------------------- */
+        
+        .listNav { margin:0 0 10px; }
+        
+        .ln-letters { overflow:hidden; }
+        .ln-letters a { font-size:0.9em; display:block; float:left; padding:2px 6px; border:1px solid silver; border-right:none; text-decoration:none; }
+        .ln-letters a.ln-last { border-right:1px solid silver; }
+        .ln-letters a:hover,
+        .ln-letters a.ln-selected { background-color:#eaeaea; }
+        .ln-letters a.ln-disabled { color:#ccc; }
+        .ln-letter-count { text-align:center; font-size:0.8em; line-height:1; margin-bottom:3px; color:#336699; }
+
+        
+        ul{
+          margin-left:-41px;
+        }
+        
+        li{          
+          border:1px solid #eee;
+          border-left:3px solid #eee;
+          margin-bottom:2px;
+        }
+        li:hover{
+          background: #E7EBF2;
+          color: #3B5998;  
+          border-left:3px solid #ccc;
+        }
+        a{
+          text-decoration:none;
+          padding:10px;
+          display:block;
+          cursor:pointer;
+        }
+          a:hover{
+            color: #3B5998;  
+            text-decoration:underline;           
+          }
+        
+      
+    }
+    
+    .person-info{
+      position:relative;
+      margin-left: -7px;
+      table{
+        margin-bottom:10px;
+      }
+      h3{
+        margin:0;
+      }
+      h3 a{
+        color: #3B5998;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      h3 a:hover{
+        text-decoration:underline;
+      }
+      
+      .small-text{
+        font-size:11px;
+      }
+       .small-text-w-margin{
+         font-size: 11px;
+    line-height: 20px;
+    margin-left: 5px;
+    padding: 6px;
+      }
+      
+      img{
+        padding:5px;
+      }
+      
+      .work-icon{
+        background-image: url("fb-icons.png");
+        background-repeat: no-repeat;
+        display: inline-block;
+        background-position: -170px -423px;
+        height: 13px;
+        width: 9px;
+        left: 67px;
+        position: absolute;
+    
+      }
+      .work-text{
+        margin-left:15px;
+      }
+      
+      .edu-icon{
+        background-image: url("fb-icons.png");
+        background-repeat: no-repeat;
+        display: inline-block;
+        background-position: -128px -423px;
+        height: 13px;
+        width: 9px;
+        left: 67px;
+        position: absolute;
+    
+      }
+      .edu-text{
+        margin-left:15px;
+      }
+       .born-icon{
+        background-image: url("fb-icons.png");
+        background-repeat: no-repeat;
+        display: inline-block;
+        background-position: -180px -420px;
+        height: 13px;
+        width: 9px;
+        left: 67px;
+        position: absolute;
+    
+      }
+      .born-text{
+        margin-left:15px;
+      }
+      
+      .activities{
+        border-right:1px solid #E5E7EB;
+        border-top:1px solid #E5E7EB;
+        border-bottom:1px solid #E5E7EB;
+        width:200px;
+        padding:5px;
+        text-align:right;
+        font-size:11px;
+        font-weight:bold;
+        color:#333;
+        border-radius: 3px 3px 3px 3px;
+        background-color: #F1F3F8;
+        border-bottom-left-radius:0;
+         border-top-left-radius: 0;
+         width:200px;
+         padding-left:50px;
+         width:250px;
+         
+         
+      }
+      .snippets{
+        margin-bottom:20px;
+        margin-left:8px;
+      }
+      
+      
+      
+      #fb-feed-container{
+        border-top:1px solid #1C2A47;
+        width:96%;
+        border-left:1px solid #AAAAAA;
+        border-right:1px solid #AAAAAA;
+        border-bottom:1px solid #AAAAAA;
+        margin-left:8px;
+        margin-bottom:20px;
+        
+        .feed-header{
+          font-size:13px;
+          color:#333333;
+          padding-left: 10px;
+          padding-right: 10px;
+          background-color: #EDEFF4;
+          border: 1px solid #D8DFEA;
+          color: #1C2A47;
+          padding-bottom: 7px;
+          padding-top: 8px;
+          font-weight:bold;
+        }
+        .feed-item{
+          font-size: 12px;
+          padding:10px;
+          
+        }
+        
+      }
+      
+    
+    }
+    
+    /* ############ Facebook related styles end ############### */
+   
+   /* ############ YELP related styles ############### */
+  .yelp-result-set{
+     width:97%;
+     margin-bottom:40px;
+     display:inline-block;
+    .result-item{
+       
+      border-top: 1px solid #EEEEEE;
+      clear: both;
+      display: block;
+      height: 120px;
+      padding-top: 11px;
+      padding-bottom: 3px;
+      
+      .left-column{
+        clear:both;
+        float:left;
+        width:17%;
+        
+        img{
+          padding:5px;
+          border: 1px solid #CCCCCC;
+          border-radius: 10px;       
+          box-shadow: 2px 2px 2px #DDDDDD;
+          -moz-border-radius: 10px; 
+          -moz-box-shadow: 2px 2px 2px #DDDDDD;
+          -webkit-border-radius: 10px; 
+          -webkit-box-shadow: 2px 2px 2px #DDDDDD;
+           
+        }
+      }
+      
+      .middle-column{
+        float:left;
+        width:40%;
+        
+        a{
+          color: #6666CC;
+          text-decoration: none;         
+        }
+        a:hover{
+          text-decoration:underline;
+        }
+        
+        h4 {
+            margin: 0;
+            padding: 1px 0 5px;
+        }
+        .rating {
+            height: 16px;             
+            width: 85px;
+        }
+        
+        .reviews{
+          color: #999999;
+          font-size: 11px;
+          line-height: 14px;
+        }
+        address{
+          font-style:normal;
+          font-size:13px;
+        }
+        .phone img{
+          padding-top:2px;  
+        }
+        
+      }
+      
+      .right-column{
+        float:right;
+        ul{
+          list-style:none;
+          margin:0;
+          li{
+            display:inline;
+          }
+          
+        }
+        
+      }
+      
+      
+      
+      
+    }   
+    
+    a.more{
+        background: url('right.png') no-repeat left center;
+        display: inline-block;
+        line-height: 32px;
+        overflow: hidden;
+        padding-left: 35px;
+        vertical-align: bottom;
+        width: 45px;
+        text-decoration:none;
+        font-size:14px;
+        margin-top:5px;
+        float:right;
+     }
+     a.more:hover{
+       text-decoration:underline;
+       color: #6666CC;
+     }
+     #more-link{
+       margin-bottom:48px;
+     }
+    
+  
+  }
+  
+   /* ############ YELP related styles ends ############### */
+  
+  /* ############ General Search related styles begins ############### */
+  
+  #general-search{
+    width:97%;
+    margin-bottom:40px;
+    font-size:12px;
+    table tr td{
+      vertical-align:top; 
+      border-bottom: 1px dotted #ddd;
+      padding-right:10px;
+      
+    }
+    table{
+      width:100%;
+    }
+    
+    td.image-container{
+      width:80px;
+      text-align:left;
+      padding:5px 5px 5px 0;
+    }
+    
+    img{
+      padding:5px 5px 5px 0;
+     margin:0 auto;
+      border: 1px solid #eee;
+      border-radius: 10px;       
+      box-shadow: 2px 2px 2px #DDDDDD;
+      -moz-border-radius: 10px; 
+      -moz-box-shadow: 2px 2px 2px #DDDDDD;
+      -webkit-border-radius: 10px; 
+      -webkit-box-shadow: 2px 2px 2px #DDDDDD;
+      
+    }
+    p{
+      margin:0;
+      padding-left:5px;
+      padding-top:5px;
+    }
+    
+  }
+  
+    /* ############ General Search related styles ends ############### */
+   
+   /* ############# Bookmarks results style            ############### */
+  
+  .bookmarks_result{
+    table{
+    
+      width: 97%;
+      padding: 2px;
+      color: #555555;    
+    }
+    
+    table tr{
+      padding:3px 3px 3px 0;
+      border-bottom:1px solid #000;
+    }
+    
+    table tr td {
+      padding:5px 5px 5px 0;
+      text-align:left;
+      width:250px;
+      border-bottom: 1px dotted #CCCCCC;
+      font-size: 11px;
+    }
+    span{
+      font-size:12px;
+    }
+    span.tag-name{
+      color:#535D6C;
+    }
+    
+    h5{
+      margin:0;
+      font-size:14px;
+    }
+    h3{
+       color: #917C6F;
+      font-size: 15px;
+      margin-bottom: 0;
+      margin-right: 0;
+      margin-top: 0;
+      padding: 6px;
+      text-transform: uppercase;
+    }
+    
+    
+    a.tags{
+          background: none repeat scroll 0 0 #535D6C;
+          border-radius: 20px 20px 20px 20px;
+          -moz-border-radius: 20px 20px 20px 20px;
+          -webkit-border-radius: 20px 20px 20px 20px;
+          color: #FFFFFF;
+          font-size: 11px;
+          padding: 2px 8px;
+          text-decoration:none;
+    }
+    a.tags:hover{
+      background: #0084B4;
+    }
+    
+     a.bookmark{          
+          font-size: 13px;
+          padding: 2px 2px; 
+          color: #0084B4;
+          text-decoration:none;        
+    }
+    a.bookmark:hover{
+      text-docration:underline;
+    }
+    
+  }
+  
+   /* ############# Bookmarks results style            ############### */
+  
+   /* ############# Directions results style begins    ############### */
+  
+  .direction-result-set{
+    padding-left:18px;
+  
+	table.direction-container{
+		width:99%;
+		margin-left:-4px;
+		
+		h3{
+		  margin:2px 0 2px 0;
+		  font-size:14px;
+		}
+		.direction-container-left{
+			width:50%;
+			vertical-align:top;	
+		}
+		.scrollable-container{
+		  width:100%;
+		  height: 610px; 
+      overflow: auto; 
+      padding-right:5px;
+      margin-top:8px;
+		  
+		}
+		.direction-container-right{
+			padding-left: 15px;
+			vertical-align: top;
+			width: 50%;
+		}
+  
+  
+		table.direction-steps{
+		  width:100%;
+		  float:left;
+		  
+		}
+		table.direction-steps td{
+		  vertical-align:top;
+		  border-bottom:1px dotted #ccc;
+		}
+		
+		.direction-no{
+		  width:1%;
+		  text-align:left;
+		}
+		.direction-middle{
+		   width:29%;
+		   text-align:left;
+		  .duration{
+			color:#808080;
+			font-size:12px;
+		  }
+		}
+		
+		.direction-right{
+		  width:2%;
+		  text-align:right;
+		  .distance{
+			color:#808080;
+			font-size:12px;
+		  }
+		}
+		
+		table.map-container{
+			vertical-align:top;	
+		}
+	}
+    
+  }
+  
+   /* ############# Directions results style ends          ############### */
+  .flickr-list{
+  
+      h2{
+        margin-left:2px;
+        margin-bottom:5px;
+        font-size:14px;
+      }
+      ul{
+        margin:0;
+        list-style: none;
+        margin-left:-38px;
+      }
+    
+      li{
+            display: none;
+            vertical-align: top;
+      }
+      li img{
+        padding:5px;
+        border:1px solid #eee;
+      } 
+      
+      li img:hover{        
+        box-shadow: 0 0 20px #bbb;   
+        -webkit-box-shadow: 0 0 20px #bbb;        
+      }
+  }
+  
+  .input-command{
+    padding:7px;
+    border:1px solid #eee;
+    cursor:pointer;
+    background-color:#eee;
+    font-size: 13px;
+    color:#000;
+    margin-top:15px;
+    small{
+      float:right;
+      color:#aaa;
+    }
+    
+    .right-column{
+      float:right;
+      margin-right:10px;
+      margin-top:-3px;
+     
+      ul{
+        list-style:none;
+        margin:0;
+        li{
+          display:inline;
+          
+        }          
+      }
+      
+      .animation{
+        
+      }        
+    }
+    
+    img{
+      border:none;
+      margin:0;
+      padding:0;
+    }
+      
+      
+  }
+  
+  /* ############# Calculate results style begins          ############### */
+  .calculate_main{
+    
+    padding-left:18px;
+    h2{
+      margin:3px 0 2px 0;
+      font-size:14px;
+    }
+    h3{
+      margin:3px 0 2px 0;
+      font-size:13px;
+    }
+  }
+  .calculate_main:hover{
+   /* border-left:1px solid #eee;*/
+    
+  }
+  /* ############# Calculate results style ends          ############### */
+ 
+  /* ############# Weather Info style begins          ############### */
+  .weather-info{
+    margin-left:18px;
+    h2{
+      font-size:15px;
+      margin:3px 0 8px 0;
+    }
+    table{
+      
+      td{
+         padding-right:5px;
+      }
+      h3{
+        margin:3px 0 2px 0;
+      }
+      td.current-weather-cell{
+        font-size:12px;
+        padding-right:12px;
+        vertical-align:middle;
+        text-align:center;
+         padding-left:10px;
+        
+        -moz-box-shadow: 5px 4px 6px #ccc;
+        -webkit-box-shadow: 5px 4px 6px #ccc;
+        box-shadow: 5px 4px 6px #ccc;
+
+        
+      }
+      
+      td.future-weather-cell{
+        font-size:12px;
+        padding-right:10px;
+        vertical-align:top;
+        text-align:center;
+        border-left:1px solid #ccc;
+        padding-left:14px;
+        -moz-box-shadow: 1px 7px 5px #eee;
+        -webkit-box-shadow: 1px 7px 5px #eee;
+        box-shadow: 1px 7px 5px #eee;
+
+      }
+    }
+    
+  }
+ 
+
+  /* ############# Weather Info style ends          ############### */
+ 
+ /* ############# Help Section style begins          ############### */
+  .help-section{
+    h1 {
+        
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 43px;
+        margin-bottom: 2px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 1px;
+        text-shadow: 0 1px #FFFFFF;
+    }
+    h2 {
+        
+        font-size: 22px;
+        line-height: 38px;
+        margin-bottom: 18px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 5px;
+        text-shadow: 0 1px #FFFFFF;
+    }
+    h3 {
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 24px;
+        text-shadow: 0 1px #FFFFFF;
+    }
+    a{
+       display: block;
+        font-weight: 300;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 10px;
+        text-decoration:none;
+        color:#917C6F;
+    }
+    a:hover{
+      text-decoration:underline;
+    }
+    ul{
+      list-style:square;
+      text-shadow: 0 1px #FFFFFF;
+    }
+  }
+
+ /* ############# Weather Info style ends          ############### */
+ 
+ /* ############# Other not implemented commands style begins          ############### */
+   
+  .track-flight-result{
+    margin:10px 0 3px 18px;
+  }
+  
+   .traffic-info{
+    margin:10px 0 3px 18px;
+    
+    img{
+      display:block;
+      width:100%;
+    }
+  }
+  
+  /* ############# Other not implemented commands style ends          ############### */
+  .collapse-all{
+    float:right;
+    font-size:12px;
+    cursor:pointer;
+    text-decoration:none;
+    display:none;
+    margin-top:-22px;
+  }
+  .collapse-all:hover{
+    text-decoration:underline;
+  }
+  
+}

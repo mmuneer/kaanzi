@@ -1,0 +1,423 @@
+/* ##################### These styles was systems generated and have been modified ############################### */
+body {
+  //background: url('main_bg.png');  
+  background-color: #E5E5E5;
+  font-family: "Palatino Linotype","Book Antiqua",Palatino,serif;
+  font-size: 20px;
+  margin:0;
+  padding:0;
+  height: 100%;
+}
+html {
+	height: 100%;
+}
+
+
+a img {
+  border: none;
+}
+
+a {
+  color: #1B1B1B;
+}
+
+ol, ul {
+    list-style: none outside none;
+}
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+
+
+#flash_notice, #flash_error, #flash_alert {
+  padding: 5px 8px;
+  margin: 10px 0;
+}
+
+#flash_notice {  
+  color:#747474;
+  border: solid 1px #eee;
+}
+
+#flash_error, #flash_alert {
+  background-color: #eee;
+  border: solid 1px #ccc;
+  font-size:12px;
+  color:red;
+  text-shadow:1px 1px #fff;
+}
+
+.fieldWithErrors {
+  display: inline;
+}
+
+.error_messages {
+  
+  border: 1px solid #ccc;
+  padding: 0px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  font-size: 12px;
+  margin-top:5px;
+}
+
+.error_messages h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 10px;
+  font-size: 12px;
+  margin: 0;
+  background:#ccc;
+  color: red;
+}
+
+.error_messages p {
+  margin: 8px 10px;
+}
+
+.error_messages ul {
+  margin: 0;
+  
+}
+.error_messages ul li{
+  list-style:square;
+  color:red;
+}
+
+/* ##################### Custom Styles starts here ############################### */
+
+/* ##################### Header styles ############################### */
+
+header.header-styles {
+    display: block;    
+    height: 75px;
+    position: relative;
+    top: 0;
+    white-space: nowrap;
+    color:#917C6F;
+    padding:15px;
+}
+header.header-styles img{
+
+}
+
+header.header-styles a{
+	text-decoration: none;
+}
+
+header.header-styles a:link, header.header-styles a:visited {
+    color: #917C6F;
+}
+header.header-styles a:hover, header.header-styles a:active {
+    color: #535D6C;
+}
+
+header.header-styles a.home{
+  background: url('ico-home.png') no-repeat center left;
+    display: inline-block;
+    float: right;
+    line-height: 32px;
+    overflow: hidden;
+    padding-left: 35px;
+    padding-top:5px;
+    vertical-align: bottom;
+    width: 60px;  
+}
+header.header-styles a.settings{
+  background: url('ico-settings.png') no-repeat center left;
+    display: inline-block;
+    float: right;
+    line-height: 32px;
+    overflow: hidden;
+    padding-left: 35px;
+    padding-top:5px;
+    vertical-align: bottom;
+    width: 72px;  
+}
+
+header.header-styles a.history{
+    background: url('ico-history.png') no-repeat center left;
+    display: inline-block;
+    float: right;
+    line-height: 32px;
+    overflow: hidden;
+    padding-left: 35px;
+    padding-top:5px;
+    vertical-align: bottom;
+    width: 68px;  
+}
+
+header.header-styles a.help{
+  background: url('ico-help.png') no-repeat center left;
+    display: inline-block;
+    float: right;
+    line-height: 32px;
+    overflow: hidden;
+    padding-left: 35px;
+    padding-top:5px;
+    vertical-align: bottom;
+    width: 60px;  
+}
+
+header.header-styles nav#navbar {
+    display: block;    
+    float:right;
+    position: relative; 
+    margin-top:-80px;   
+}
+
+header.header-styles nav ul#topNavigation {    
+   
+}
+
+header.header-styles nav > ul > li {    
+    display: block;
+    float: left;
+    margin: -3px 0 0;
+    padding: 0 9px;
+    position: relative;    
+}
+
+header.header-styles nav > ul {
+    margin-top: 10px;   
+}
+
+nav ul {
+    list-style: none outside none;
+}
+header.header-styles #login-notification{
+  float:right;
+  margin-top:-35px;
+  margin-right:26px;
+}
+
+header.header-styles #login-notification a.user-name{
+  color: #535D6C;
+}
+header.header-styles #login-notification a.user-name:hover{
+  border-bottom:1px dotted;
+}
+
+
+/* ##################### Content styles ############################### */
+#page-container {
+  position:relative;
+}
+
+#middle-container{
+	
+	clear:both;
+	position:relative;
+	min-height:700px;
+	
+}
+
+#sidebar-container{ 
+  width:350px;
+  float:left;
+  min-height:700px;
+  .css1 { font-size: .9em; }
+  .css2 { font-size: 1.1em; }
+  .css3 { font-size: 1.3em; }
+  .css4 { font-size: 1.5em; }
+  h3{
+    color: #917C6F;
+    padding-left: 15px;
+  }
+  a{
+    text-decoration:none;
+  }
+  a:hover{
+    text-decoration:underline;
+  }
+  
+}
+
+#content-container{	
+
+    //background: #fff;
+    //background: url('content_bg.png');
+    background: none repeat scroll 0 0 #FFFFFF;  
+    border: 1px solid #919191;
+    box-shadow: -2px -2px 5px #AAAAAA;  
+    margin-left:350px;
+    padding:20px 10px 0px 30px;
+	  min-height:800px;
+	
+}
+
+
+
+#quicklinks{    
+    display: block;
+    padding-left:10px;
+    margin: 0 0 21px;
+    position: relative;
+    z-index:10;
+}
+
+#quicklinks .pointers{    
+  margin-left:30px;margin-top:-10px;
+}
+
+#quicklinks .cloudIImage{
+    margin-left: 16px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    margin-right: 25px;
+} 
+
+#quicklinks .boomarks{
+  margin-left:-26px;
+  margin-top:-10px;
+  li{
+    padding:3px;
+    a{
+      text-decoration:none;
+      color:#000;
+    }
+    a:hover{
+      border-bottom:1px dotted;
+      color:#535D6C;
+    }
+  }
+}
+
+#logo{
+ font-family: 'Rationale', cursive;
+ font-size:32px;
+ font-weight:bold;
+ float:right; 
+ margin-right:20px;
+ margin-top:-30px;
+ text-shadow: 3px 1px #ccc; 
+}
+
+#output{
+  margin-left: 8px;
+  padding-bottom:20px;
+  font-family: "Palatino Linotype","Book Antiqua",Palatino,serif;
+  font-size: 14px;
+  margin-top:70px;
+}
+.autocomplete-item{
+  font-size:13px;
+  width:300px;
+  
+  
+}
+.autocomplete-item:hover{
+  background:#eee;
+}
+
+#about-section{
+  font-size:14px;
+  text-shadow:1px 1px #fff;
+  display:none;
+  margin-top:-10px;
+  text-align:justify;
+  h2{
+    border-bottom:1px solid #ccc;
+    width:97%;
+    color:#917C6F;
+  }
+  p{
+    padding-right:22px;
+  }
+}
+
+.help-section{
+  display:none;
+  h1 {
+        
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 43px;
+        margin-bottom: 2px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 1px;
+        text-shadow: 0 1px #FFFFFF;
+    }
+    h2 {
+        
+        font-size: 22px;
+        line-height: 38px;
+        margin-bottom: 18px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 5px;
+        text-shadow: 0 1px #FFFFFF;
+    }
+    h3 {
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 24px;
+        text-shadow: 0 1px #FFFFFF;
+    }
+    a{
+       display: block;
+        font-weight: 300;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 10px;
+        text-decoration:none;
+        color:#917C6F;
+    }
+    a:hover{
+      text-decoration:underline;
+    }
+    ul{
+      list-style:square;
+      text-shadow: 0 1px #FFFFFF;
+      font-size:14px;
+      
+    }
+}
+
+
+
+
+
+/* ##################### Footer styles ############################### */
+.footer-styles{
+    width: 100%;
+}
+
+.footer-styles ul li {
+    border-right: 1px solid #999999;
+    float: left;
+    font-size: 12px;
+    margin-bottom: 10px;
+    padding: 0 10px;	
+}
+
+.footer-styles ul li a, #footer ul li a:visited {
+    color: #BF3211;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.footer-styles ul li.copyright {
+    border: medium none;
+    color: #555555;
+    float: left;
+    font-size: 11px;    
+    
+}
+
+.footer-styles ul li.last {
+    border: none;
+}
+
+
+
+
+
+

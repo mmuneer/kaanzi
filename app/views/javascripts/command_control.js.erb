@@ -1,0 +1,259 @@
+//= require jquery
+//= require jquery_ujs
+//= require jquery-ui
+//= require_self
+//= require_tree .
+
+
+$(document).ready(function() {
+
+  var autocomplete = [];
+  var autocomplete_hash = {};
+  var show_autocomplete = false;
+  
+  <% autocomplete_yaml.each do |auto|%>
+
+    autocomplete_hash = {
+      command_first: "<%= auto[1]['command_first']%>",
+      hint_first: "<%= auto[1]['hint_first']%>",
+      param_first: "<%= auto[1]['param_first']%>",
+      command_second: "<%= auto[1]['command_second']%>",
+      hint_second: "<%= auto[1]['hint_second']%>",
+      param_second: "<%= auto[1]['param_second']%>"
+    };
+
+    autocomplete.push(autocomplete_hash);
+    
+  <%end%>
+  
+  var init = true;
+
+  var interval = "";
+  var skip_interval = false;
+  var interval_value = 1000;
+  $('#command_name').get(0).focus();
+  
+  $('#cursor-span').removeClass('cursor-span-blink');
+  $('#cursor-span').addClass('cursor-span-unblink');
+  
+
+  //blinking cursor code
+  var interval = setTimeout(function() {
+    if(skip_interval == false){
+	  if($('#cursor-span').hasClass('cursor-span-unblink')){
+	    //$('#cursor-span').toggleClass('cursor-span-blink');
+		$('#cursor-span').removeClass('cursor-span-unblink');
+		$('#cursor-span').addClass('cursor-span-blink');
+	  }else{
+	    //$('#cursor-span').toggleClass('cursor-span-unblink');
+		$('#cursor-span').removeClass('cursor-span-blink');
+		$('#cursor-span').addClass('cursor-span-unblink');
+	  }
+	}else{
+	  skip_interval = false;
+	}
+	
+	interval_value = 550;
+
+	setTimeout(arguments.callee, interval_value);
+  },interval_value);
+
+  $( "#create_event_dialog" ).dialog({
+    modal: true,
+    autoOpen: false,
+    height: 240,
+    width: 300            
+  });
+  
+
+    
+  var href = jQuery(location).attr('href');
+
+  //var url = jQuery(this).attr('title');
+
+  if( href.indexOf('login')!=-1 || href.indexOf('signup')!=-1 || href.indexOf('user/edit')!=-1 ){
+    $(".pointers" ).css('display','none');
+  }else{		
+    $(".pointers" ).css('display','inline-block');
+  } 
+   
+  /* shows and hides ajax indicator */
+
+  $("#command_name").ajaxStart(function(){
+    $('#ajax-indicator').show();
+  });  
+	 
+  $("#command_name").ajaxComplete(function(event,request, settings){
+    //$('#output').css('opacity','1');
+    $('#ajax-indicator').hide();
+    
+    $("#command_name").val("");
+    $("#command_name").focus();
+	$('#command_name').trigger("keydown"); 
+  });
+	 
+  $('#command_name').keypress(function(e, item) {
+    if(e.keyCode == 13){
+      //calcRoute();
+      if( $('.input-command').length > 1 ){
+	    $('.collapse-all').show();
+	  }
+	}
+  });
+  
+  
+	$(".input-command").unbind('click'); /* This is required to make sure you are not binding multiple*/
+	$(".input-command").live("click", function() {
+   			$(this).next().slideToggle('fast');
+			return false;
+	});
+	
+	$(".input-command").next().not(':first').hide('fast');
+	
+	$('#about-link').click(function(e) {
+		$('.output-outer').hide('fast');
+		$('.pointers').hide();
+		$('.help-section').hide('fast');
+		$('#about-section').slideDown('fast');
+		$('#new_command').hide('show');	
+		
+		
+	});
+	
+	$('.help').click(function(e) {
+		$('.output-outer').hide('fast');
+		$('.pointers').hide();
+		$('#about-section').hide('fast');
+		$('.help-section').show('fast');	
+			
+		$('#new_command').hide('show');	
+	});
+		
+	
+	$('.help-section').hide('fast');	
+	$('.output-outer').show('slow');
+	$('#new_command').slideDown('fast');
+	$('#about-section').hide('fast');	
+		
+	
+	$('.collapse-all').click(function(e) {
+       
+       if ( this.innerHTML == "Collapse all"){
+            $(".input-command").next().hide('fast');
+       		this.innerHTML  = "Expand all";
+       	}
+       	else
+       	{
+       		this.innerHTML  = "Collapse all";
+       		 $(".input-command").next().show('fast');
+       	}
+			return false;
+     });
+	
+	/*
+	$('#paginatedList').listnav({ 
+       includeNums: false,
+       initLetter: 'a',
+       showCounts:false 
+    });
+    */
+	
+	$("#goto-top").click(function(){
+          $('html, body').animate({ scrollTop: 0 }, 'slow');
+	});
+  
+
+  $("#command_name").keyup(function(e) {
+    var pos = 0;
+    var input = $('#command_name').get(0);
+    
+    // IE Support
+    if (document.selection) {
+	  input.focus();
+	  var sel = document.selection.createRange();
+	  var selLen = document.selection.createRange().text.length;
+	  sel.moveStart('character', -input.value.length);
+	  pos = sel.text.length - selLen;
+    }
+
+    // Firefox support
+    else if (input.selectionStart || input.selectionStart == '0'){
+    	pos = input.selectionStart;
+    }
+    
+    var before_cursor = $('#command_name').val().substring(0, pos).replace(new RegExp(' ', 'g'),"&nbsp;");
+	var at_cursor = $('#command_name').val().substring(pos,(pos + 1)).replace(new RegExp(' ', 'g'),"&nbsp;");
+	var after_cursor = $('#command_name').val().substring((pos + 1)).replace(new RegExp(' ', 'g'),"&nbsp;");
+	
+	if(at_cursor == ''){
+	  at_cursor = "&nbsp;";
+	}
+		
+	result = before_cursor + "<span id='cursor-span' class='cursor-span-unblink'>" + at_cursor + "</span>" + after_cursor;
+	
+	$('#prompt-display').html(result);
+	$('#cursor-span').removeClass('cursor-span-blink');
+    $('#cursor-span').addClass('cursor-span-unblink');
+	skip_interval = true;
+	  
+  });
+  
+  $("#command_name").keydown(function(e) {
+    $('#command_name').trigger("keyup");  
+  });
+  
+  $(this).keydown(function(e) {
+  	$("html").scrollTop(0);
+  	$('#command_name').get(0).focus();
+    $('#command_name').trigger("keyup");
+  }); 
+  
+
+});
+    	
+  function showGoogleMap(start,end) {
+    var directionsDisplay;
+    var directionsService = new google.maps.DirectionsService();
+    var map;
+   
+    directionsDisplay = new google.maps.DirectionsRenderer();
+    var chicago = new google.maps.LatLng(41.850033, -87.6500523);
+    var myOptions = {
+      zoom:7,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      center: chicago
+    }
+    map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    directionsDisplay.setMap(map);
+
+    var start = document.getElementById("start").value;
+    var end = document.getElementById("end").value;
+    var request = {
+      origin:start,
+      destination:end,
+      travelMode: google.maps.TravelMode.DRIVING
+    };
+    directionsService.route(request, function(result, status) {
+      if (status == google.maps.DirectionsStatus.OK) {
+        directionsDisplay.setDirections(result);
+      }
+    });
+  }
+   
+  function showTraffic(){
+  	var myLatlng = new google.maps.LatLng(34.04924594193164, -118.24104309082031);
+  	var myOptions = {
+    	zoom: 13,
+    	center: myLatlng,
+    	mapTypeId: google.maps.MapTypeId.ROADMAP
+  }
+
+  	var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+ 	var trafficLayer = new google.maps.TrafficLayer();
+  	trafficLayer.setMap(map);
+  	
+  }   
+  
+  
+

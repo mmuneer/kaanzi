@@ -1,0 +1,14 @@
+<%=form_for [current_user,@bookmark], :remote => true do |f|%>
+
+  <p>
+	  <%= f.label :name %><br/>
+	  <%= f.text_field :name,:required=>"true" %>
+  </p>
+  <p>
+	  <%= label_tag :tags  %><br/>
+	  <%= text_field_tag :tags %>
+  </p>
+  <%= f.submit "Done", :name => "done" %>
+  <%= submit_tag "Cancel", :name => "cancel" %>
+
+<%end%>

@@ -1,0 +1,135 @@
+#users_controller{
+  #user-registration{
+    
+    background: -moz-linear-gradient(0% 40% 90deg, #FFFFFF, #EEEEEE) repeat scroll 0 0 transparent;
+    border: 1px solid #DDDDDD;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 0 50px #CCCCCC;   
+    -webkit-box-shadow: 0 0 50px #CCCCCC;
+    margin: 50px auto;
+    padding: 30px 40px 20px;
+    width: 515px;         
+    overflow:hidden;
+    
+    header{
+       border-bottom: 1px solid #CCCCCC;
+      clear: both;
+      height: 27px;     
+      padding: 5px; 
+      
+      .header-left{
+        clear:both;
+        float:left; 
+        h1{
+          color:#000;
+          font-size:18px;
+          margin:0;
+        }       
+      }
+      .header-right{        
+        float:right;
+        margin-left:100px;
+        h3{
+          color:#bbb;
+          font-size:14px;
+          margin:0;
+        }
+        a{
+          color:#535D6C;
+          font-size:15px;
+        }
+        a:hover{
+          color:#917C6F;
+        }
+      }
+    
+    }
+    form{
+      padding:2px;
+    }
+    
+    
+    input[type="text"]{
+      border: 1px solid #DDDDDD;
+      border-radius: 3px;
+      box-shadow: 0 0 4px #AAAAAA;
+      -moz-box-shadow: 0 0 4px #AAAAAA;
+      -webkit-box-shadow: 0 0 4px #AAAAAA;
+      font-size: 14px;
+      height: 22px;
+      outline: medium none;
+      padding: 8px;
+      text-shadow: 0 1px 0 #FFFFFF; 
+      margin-top:5px;
+      width: 270px;
+      cursor:text;
+    }
+    input[type="text"]:focus{
+       box-shadow: 0 0 4px #121212;
+      -moz-box-shadow: 0 0 4px #121212;
+      -webkit-box-shadow: 0 0 4px #AAAAAA;
+    }
+    
+    input[type="password"]{
+      border: 1px solid #DDDDDD;
+      border-radius: 3px;
+      box-shadow:0 0 4px #AAAAAA;
+      -moz-box-shadow: 0 0 4px #AAAAAA;
+      -webkit-box-shadow: 0 0 4px #AAAAAA;
+      font-size: 14px;
+      height: 22px;     
+      padding: 8px;
+      text-shadow: 0 1px 0 #FFFFFF;     
+      margin-top:5px;   
+      width: 270px; 
+      cursor:text;          
+    }
+    input[type="password"]:focus{
+       box-shadow: 0 0 4px #121212;
+      -moz-box-shadow: 0 0 4px #121212;
+      -webkit-box-shadow: 0 0 4px #AAAAAA;
+    }
+    input[type="email"]{
+      border: 1px solid #DDDDDD;
+      border-radius: 3px;
+      box-shadow:0 0 4px #AAAAAA;
+      -moz-box-shadow: 0 0 4px #AAAAAA;
+      -webkit-box-shadow: 0 0 4px #AAAAAA;
+      font-size: 14px;
+      height: 22px;     
+      padding: 8px;
+      text-shadow: 0 1px 0 #FFFFFF;     
+      margin-top:5px;   
+      width: 270px; 
+      cursor:text;          
+    }
+    input[type="email"]:focus{
+       box-shadow: 0 0 4px #121212;
+      -moz-box-shadow: 0 0 4px #121212;
+      -webkit-box-shadow: 0 0 4px #AAAAAA;
+    }
+    .login-label{   
+      font-size: 15px;      
+      padding: 5px;
+      text-shadow: 0 1px 0 #FFFFFF; 
+      margin-top:5px;       
+      
+    }
+    
+    input[type="submit"]{
+      background-color: #917C6F; /*#BF3211;*/
+      border: medium none;
+      border-radius: 2px;
+      color: #F0EFD1;
+      padding: 8px;
+      width: 110px;
+      cursor:pointer;   
+      box-shadow: 0 0 2px #121212;
+      -moz-box-shadow: 0 0 2px #121212;
+      -webkit-box-shadow: 0 0 2px #AAAAAA;          
+    }
+    input[type="submit"]:hover{     
+      background-color: #535D6C;
+    }
+  }
+}

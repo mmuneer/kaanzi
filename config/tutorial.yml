@@ -1,0 +1,12 @@
+weather:
+  instruction: commands/tutorial/weather/instruction
+  summary: commands/tutorial/weather/summary
+  matches: weather,-w
+wiki:
+  instruction: commands/tutorial/wiki/instruction
+  summary: commands/tutorial/wiki/summary
+  matches: wiki
+search:
+  instruction: commands/tutorial/search/instruction
+  summary: commands/tutorial/search/summary
+  matches: search,find

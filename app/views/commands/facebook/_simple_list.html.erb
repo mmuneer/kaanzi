@@ -1,0 +1,22 @@
+<div id="simple-list">
+<div id="paginatedList-nav"></div> 	
+<ul id="paginatedList">
+  <% @results[:data].each_with_index do |item, i| %>
+    
+      <li><%= link_to item, "#", :class=> 'friend-name' %></li>
+   
+	
+  <% end %>
+</ul>
+
+</div>
+
+<script>
+	
+	 $('#paginatedList').listnav({ 
+       includeNums: false,
+       initLetter: 'a',
+       showCounts:false 
+    });
+    
+</script>

@@ -1,0 +1,9 @@
+<% puts "select_specific_html partial called" %>
+<div class="select-specific-person">
+	<h3>Multiple matches found</h3>
+	<ul>
+	<% @results[:data].each_with_index do |item, i| %>
+	  <li><%= link_to item.name, "#", :class=> 'friend-name' %></li>
+	<% end %>
+	</ul>
+</div>

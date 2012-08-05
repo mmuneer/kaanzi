@@ -1,0 +1,21 @@
+<% puts  @results[:partial] %>
+<% puts  @results[:command_name] %>
+
+$("#prompt-label").html("<%= @current_domain %>>");
+
+$("#output").prepend("<%= escape_javascript render :partial => @results[:partial] %>");
+
+<% unless(@results[:partial].casecmp("redirect_auth") == 0) %>
+  $("#output").prepend("<%= escape_javascript render :partial => 'input_command' %>");
+<% end %>
+
+$("#tutorial").html("");
+
+<% unless @current_tutorial[:summary].nil? %>
+  $("#tutorial").append("<%= escape_javascript render :partial => 'commands/tutorial/summary_status' %>");
+  $("#tutorial").append("<%= escape_javascript render :partial => @current_tutorial[:summary] %>");
+<%end%>
+
+<% unless @current_tutorial[:instruction].nil? %>
+  $("#tutorial").append("<%= escape_javascript render :partial => @current_tutorial[:instruction] %>");
+<%end%>

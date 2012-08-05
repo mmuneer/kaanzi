@@ -1,0 +1,8 @@
+<script type="text/javascript">
+  <% unless @current_tutorial[:completed_summary].blank? %>
+    $("#tutorial").html("<%= escape_javascript render :partial => 'commands/tutorial/summary_status' %>");
+  <%end%>
+  <% unless @current_tutorial[:instruction].blank? %>
+    $("#tutorial").append("<%= escape_javascript render :partial => @current_tutorial[:instruction] %>");
+  <%end%>
+</script>

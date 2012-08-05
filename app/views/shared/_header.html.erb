@@ -1,0 +1,18 @@
+<header class="header-styles">
+	<div id="logo-container">
+		<a href="#" title="Web Prompt"><%= image_tag('logo.png',:alt=>'Web prompt')%></a>
+	</div>
+	<nav id="navbar">
+		<ul id="topNavigation">
+			<li><% if current_user.nil? %> 
+				<%= link_to "Home",root_url, :class=>'home' %>
+				<% else %>
+				<%= link_to "Home",new_command_url, :class=>'home' %>
+				<% end %></li>
+			<li><a title="" href="#" class="settings">Settings</a></li>
+			<li><a title="" href="#" class="history" id="about-link">About</a></li>
+			<li><a title="" href="#" class="help">Help</a></li>
+		</ul>
+	</nav>
+	
+</header>

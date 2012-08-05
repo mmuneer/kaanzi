@@ -1,0 +1,23 @@
+jQuery(document).ready(function() {
+   
+   $(".links").live("click", function(i) {
+      
+      new_val = $(this).text();
+      $("#command_name").val(new_val);
+      $("#command_name").focus();
+	  var result =  new_val + "<span id='cursor-span' class='cursor-span-unblink'/>";  
+       $('#prompt-display').html(result);
+       $('#cursor-span').removeClass('cursor-span-blink');
+       $('#cursor-span').addClass('cursor-span-unblink');
+       skip_interval = true;
+    });
+
+    
+	
+});
+
+function history(history){
+  
+	
+   
+   }

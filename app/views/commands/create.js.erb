@@ -1,0 +1,10 @@
+<%unless @redirect_to.nil?%>
+  window.location.replace("<%= @redirect_to%>")
+<%end%>
+<%if @results.class.eql?(String)%>
+  $("#output").html("<%= @results %>");
+<% else %>
+  $("#output").html("<%= escape_javascript render :partial => 'result',:collection => @results %>");
+ 
+<%end%>
+

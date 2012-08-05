@@ -1,0 +1,51 @@
+<div class="direction-result-set">
+	
+<% if @results[:data].blank? %>
+	<p>No results found.</p>
+<% end %>	
+
+<h3>Distance: <%= @results[:data][:distance] %> 
+   / Duration: <%= @results[:data][:duration]%>
+</h3>
+
+<table class="direction-container" cellspacing="0" cellpadding="0">
+<tr>
+	<td class="direction-container-left">
+		<div class="scrollable-container">
+		<table class="direction-steps">
+		<% sum = 0 %>	
+		<% for i in 0...@results[:data][:steps].length %>
+			<tr>
+				<td class="direction-no"><%= i+1 %>.</td>
+				<td class="direction-middle">
+					<div><%= @results[:data][:steps][i][:instruction] %></div>
+					<div class="duration">About&nbsp;<%= @results[:data][:steps][i][:duration] %></div>			
+				</td>	
+				<td class="direction-right">
+					<div>go&nbsp;<%= @results[:data][:steps][i][:distance] %></div>
+					<% sum += @results[:data][:steps][i][:distance].to_f %>
+					<div class="distance">Total&nbsp;<%= sprintf('%.2f', sum) %></div>
+				</td>	
+			</tr>
+			
+		<%end%>
+		</table>
+		</div>
+	</td>
+	<td class="direction-container-right">
+		<table class="map-container">
+			<input type="hidden" id="start" name="start" value="<%= @results[:data][:start_address] %>" />
+			<input type="hidden" id="end" name="end" value="<%= @results[:data][:end_address] %>" />
+			<tr>
+				<td>
+					<script>showGoogleMap(document.getElementById("start").value,document.getElementById("end").value);</script>
+					<div id="map_canvas" style="top:5px;height:600px;width:600px;overflow:hidden;"></div>
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+</table>
+
+</div>
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title><%= content_for?(:title) ? yield(:title) : "Web Command Prompt" %></title>   
+    <%= stylesheet_link_tag "application" %>
+    <%= yield :javascript_includes %>
+    <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Rationale" %>   
+	<%= stylesheet_link_tag "http://code.google.com/apis/maps/documentation/javascript/examples/default.css" %>  
+    <%= javascript_include_tag "application" %>
+	<%= javascript_include_tag 'jquery.lightbox-0.5', 'jquery-ui-1.8.17.custom.min.js', 'jquery.listnav.min-2.1' %>
+    <%= javascript_include_tag "http://maps.googleapis.com/maps/api/js?key=#{Settings.gmap3.api_key}&sensor=false" %>
+
+    
+    <%= csrf_meta_tag %> 
+    
+    <script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-28707967-2']);
+		  _gaq.push(['_trackPageview']);
+		
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+	</script>
+    <%= yield(:head) %>
+
+  </head>
+  <body id="<%= params[:controller].parameterize %>_controller">
+  	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=101460609971049";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+  
+    <%= render "shared/header" %>
+   
+          
+	  <div id="middle-container">		  
+		  
+		  <div id="sidebar-container">
+			 <%= render "shared/sidebar" %>
+		  </div>
+		  
+		  <div id="content-container">	  
+		      
+			  <% flash.each do |name, msg| %>
+			    <% if "alert".eql? "#{name}" %>
+				   <%= content_tag :div, msg, :id => "flash_#{name}" %>
+				<% end %>
+			  <% end %>
+			  <%= content_tag :h1, yield(:title) if show_title? %>
+			  <%= yield %>
+         
+          
+		  </div>
+		  
+
+			  
+	 </div>
+
+	  <% #= render "shared/footer" %>
+	  
+    
+  </body>
+</html>

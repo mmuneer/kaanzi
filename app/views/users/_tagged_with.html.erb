@@ -1,0 +1,17 @@
+<div class ="bookmarks_result">
+ <h3>List of bookmarks [<span class="tag-name"><%= @bookmark[:tag] %></span>]</h3>
+
+ <table>
+ 	<% @bookmark[:results].each do |bookmark|%>
+		<tr>
+			<td>
+				<%= link_to bookmark.name, "#",:class => 'links bookmark' %>
+			</td>
+			<td>
+				<%= bookmark.created_at.to_formatted_s(:long) %>
+			</td>
+		</tr>
+	<%end%>
+  </table>
+  
+</div>

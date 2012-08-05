@@ -1,0 +1,25 @@
+
+
+<div id="wikiInfo" class="wikiInfo">
+	
+  <%= stylesheet_link_tag "wiki/wiki_main" %>
+  <% content_for :javascript_includes do %>
+    <%= javascript_include_tag 'wiki/wiki_main' %>
+  <% end %>
+
+  <div class="wiki_iamge_section">
+  <% @results[:images].each_with_index do |item, i| %>
+    <a href="<%= item.to_s %>" class="lightboxwiki" ><img src="<%= item.to_s %>" width="110" height="110" alt="" /></a>
+  <% end %>
+  </div>
+  
+  <br/>	
+  <%= @results[:data].html_safe %>
+  
+</div>
+
+<script type="text/javascript">
+  $(function() {
+    wiki_init();
+  });
+</script>

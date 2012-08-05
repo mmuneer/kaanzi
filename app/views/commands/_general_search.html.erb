@@ -1,0 +1,18 @@
+<div id="general-search">
+<h3>Search result</h3>
+
+<table cellpadding="3">
+  <% @results[:data].each do |item| %>
+    <tr>
+	  <td class="image-container">
+	    <% if item[:image].blank? %>
+	      <%= image_tag('no_image.gif',:size=>'60x60', :border=>0)%>
+	    <% else %>
+	      <%= image_tag("#{item[:image]}", :height => '60', :style => 'max-width: 60px;', :alt => " ")%>
+	    <% end %>
+	  </td>
+	  <td><%= item[:text] %></td>
+	</tr>
+  <% end %>
+</table>
+</div>

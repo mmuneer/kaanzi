@@ -1,0 +1,8 @@
+<div>
+  <% if @current_tutorial[:summary].blank? && @current_tutorial[:completed_summary].blank? %>
+    Welcome to Kaanzi. Interact with the web through commands. Start with a simple command like 'weather new york'
+  <% else %>
+    Now lets try to retrive weather information. Try the command 'weather new york'
+  <% end %>
+
+</div>

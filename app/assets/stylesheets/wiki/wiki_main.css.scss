@@ -1,0 +1,42 @@
+.wiki_iamge_section{
+  width: 96%;
+  margin: 0px auto; 
+  margin-top: 10px;
+}
+.dablink{
+  display:none;
+}
+.thumb{
+  display:none;
+}
+.editsection{
+  display:none;
+}
+.toc{
+  display:none;
+}
+.vertical-navbox{
+  display:none;
+}
+h2 > hr{
+  color: #DDDDDD;
+  background-color: #DDDDDD;
+}
+.show{
+    background-image:url(/assets/wiki/show.png);
+  display:inline-block;
+  width:32px;
+  height:32px;
+  float:right;
+    //background-position:-10px -20px; /*or whatever the "thumbsup" image's coordinates are in your sprite*/
+    //text-indent:-9999px;
+}
+.hide{
+    background-image:url(/assets/wiki/hide.png);
+  display:inline-block;
+  width:32px;
+  height:32px;
+  float:right;
+    //background-position:-10px -20px; /*or whatever the "thumbsup" image's coordinates are in your sprite*/
+    //text-indent:-9999px;
+}

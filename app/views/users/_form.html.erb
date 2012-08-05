@@ -1,0 +1,20 @@
+<%= form_for @user do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :username, "User name:",:class=>'login-label' %><br />
+    <%= f.text_field :username,:type => 'text',:required=>'true' %>
+  </p>
+  <p>
+    <%= f.label :email, "Email address:",:class=>'login-label' %><br />
+    <%= f.email_field :email,:type => 'email',:required=>'true', :placeholder => "john@example.com" %>
+  </p>
+  <p>
+    <%= f.label :password,"Password:",:class=>'login-label' %><br />
+    <%= f.password_field :password, :type=>'password', :required=>'true'%>
+  </p>
+  <p>
+    <%= f.label :password_confirmation, "Confirm Password",:class=>'login-label' %><br />
+    <%= f.password_field :password_confirmation, :type=>'password', :required=>'true' %>
+  </p>
+  <p><%= f.submit (@user.new_record? ? "Sign up" : "Update") %></p>
+<% end %>

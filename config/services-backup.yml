@@ -1,0 +1,51 @@
+post:
+  twitter:
+    status: postTwitter
+  facebook:
+    status: postFacebook
+find:
+  find: defaultSearch
+  place: yelp
+  -p: yelp
+  business: yelp
+  restaurants: yelpEnhance
+  bars: yelpEnhance
+  gyms: yelpEnhance
+search:
+  search: defaultSearch
+  twitter: searchTwitter
+bing: bingSearch
+read:
+  twitter:
+    stream: showTwitterStream
+login:
+  twitter: loginTwitter
+  facebook: loginFacebook
+list:
+  facebook:
+    friends: listFacebookFriends
+  friends: listFacebookFriends
+weather: getWeather
+-w: getWeather
+calculate: calculate
+select: selectPerson
+say: say
+open: launchSite
+what:
+  is: defineMethod
+lookup: defineMethod
+define: dictionaryLookup
+eat: eatMethod
+history: history
+bookmarks: bookmark
+yellowpage: yelp
+yp: yelp
+yelp: yelp
+direction: direction
+meaning: dictionaryLookup
+dictionary: dictionaryLookup
+definition: dictionaryLookup
+flickr: mostRecentPhotos
+help: helpCommand
+wiki: wiki
+mridul: mridul

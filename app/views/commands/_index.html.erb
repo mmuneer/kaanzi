@@ -1,0 +1,12 @@
+<% puts  @results[:partial] %>
+<% puts  @results[:command_name] %>
+
+<script type="text/javascript">
+alert('hi1');
+$("#output").prepend("default");
+alert('hi2');
+<% unless(@results[:partial].casecmp("redirect_auth") == 0) %>
+  $("#output").prepend("<%= escape_javascript render :partial => 'input_command' %>");
+<% end %>
+alert('h3');
+</script>

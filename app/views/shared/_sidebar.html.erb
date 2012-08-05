@@ -1,0 +1,48 @@
+<aside id="quicklinks">
+	<% if logged_in? %>
+    	<%= image_tag('pointers.png', :alt=>'Pointers', :class=> 'pointers')%>
+    <%end%>
+    
+
+    
+	<header>
+		<!-- <%= image_tag('popcommands.png', :alt=>'Popular Commands')%> -->
+		<h3>Popular Commands</h3>
+	</header>
+	<section class="cloudIImage">
+		<%= link_to 'find ',"#",:class => "css1 links" %>
+	    <%= link_to 'search ',"#",:class => "css4 links" %>
+		<%= link_to 'direction ',"#",:class => "css3 links" %>
+		<%= link_to 'define ',"#",:class => "css2 links" %>
+		<%= link_to 'calculate ',"#",:class => "css4 links" %>
+		<%= link_to 'track',"#",:class => "css1 links" %>
+		<%= link_to 'flickr',"#",:class => "css4 links" %>
+		<%= link_to 'traffic',"#",:class => "css3 links" %>
+		<%= link_to 'post',"#",:class => "css2 links" %>
+		<%= link_to 'login twitter',"#",:class => "css1 links" %>
+		<%= link_to 'weather ',"#",:class => "css4 links" %>
+		<%= link_to 'lookup ',"#",:class => "css2 links" %>
+	</section>
+
+	<header>
+		<!--  <%= image_tag('shortcut.png', :alt=>'Bookmarks')%> -->
+		<h3>Shortcuts</h3>
+	</header>
+	<section class="boomarks">
+		<ul>  
+		       
+			<li style="display:block">ctrl + Up : next command </li>
+			<li style="display:block">ctrl + down : previous command </li>
+			<li style="display:block">-w : weather </li>
+			<li style="display:block">find -p : find &lt;business&gt; </li>
+			<li style="display:block">help </li>				               
+		</ul>
+	</section>
+
+	<!--
+	<div class="fb-send" data-href="http://kaanzi.com" data-font="lucida grande" style="float:right;"></div>
+	<div class="fb-comments" data-href="http://kaanzi.com" data-num-posts="2" data-width="330"></div>
+	<iframe src="http://www.facebook.com/plugins/comments.php?href=kaanzi.com&permalink=1" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:130px; height:16px;" allowTransparency="true"></iframe>
+	-->
+</aside>
+

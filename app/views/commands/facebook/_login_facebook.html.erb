@@ -1,0 +1,65 @@
+<div class="person-info">
+<div>	
+<table>
+	<tr>
+		<td colspan="2">&nbsp;&nbsp;Logged into Facebook as:</td>
+	</tr>
+	<tr>
+		<td><%= image_tag("#{@results[:data].picture}", :border => 0) %></td>
+		<td>
+			<h3><%= link_to @results[:data].name, @results[:data].link, :target=>"_blank" %> </h3>
+			<div class="small-text">
+			<% unless @results[:data].work.blank? %>
+			   <% @results[:data].work.each_with_index do |item, i| %>
+			   <span>
+			   	  <span class="work-icon"></span>
+			   	  <span class="work-text">
+				      <% unless item.position.blank? %>				     
+					     <%= item.position.name+' at' %>
+					  <% end %>
+					  <% unless item.employer.blank? %>
+					    <%= item.employer.name %>
+					  <% end %>
+				  </span>
+			   </span>
+				 <% break %>
+			    <% end %>  
+			<% end %>
+			</div>
+			<div class="small-text">
+			<% unless @results[:data].education.blank? %>
+			    <% @results[:data].education.each_with_index do |item, i| %>
+			    <span>
+			   	  <span class="edu-icon"></span>
+			      <span class="edu-text">
+			      	Studied&nbsp;
+				      <% unless item.degree.nil? %>
+					       <%= item.degree.name+' ' %>
+					  <% end %>
+					  <% unless item.school.nil? %>
+					     <%= 'at '+item.school.name %>
+					  <% end %>
+				  </span>
+				 </span>  
+				  <% break %>
+			    <% end %>
+			<% end %>
+			
+			</div>
+			<div class="small-text">
+				<span>
+			   	  
+				<% unless @results[:data].birthday.blank? %>
+				<span class="born-icon"></span>
+				  <span class="born-text">Born on <%= Date.parse(@results[:data].birthday.to_s).strftime("%B")+' '+Date.parse(@results[:data].birthday.to_s).strftime("%d") %></span>
+				<% end %>
+				</span>
+			</div>
+						
+		</td>
+	</tr>
+</table>
+</div>
+
+</div>
+

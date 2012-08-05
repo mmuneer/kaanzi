@@ -1,0 +1,24 @@
+
+ <div class="input-command">
+ 	&gt;&nbsp;<%= @results[:command_name] %>&nbsp;
+ 	<small>
+ 		<%= Time.parse(@results[:command_exec_time].to_s).strftime("%m/%d/%Y %H:%M:%S") %> 
+ 		
+    </small>
+    
+    <div class="right-column">
+		<ul>
+			<% unless current_user.nil? %>
+			  <li><%= link_to image_tag("star_none.png", :size => "20x20", :border => 0), new_user_bookmark_path(current_user,@bookmark), :remote => true %></li>
+			<% end %>
+			
+			<li><%= link_to image_tag('_0044_Facebook.png', :size=>'20x20') %></li>
+			<li><%= link_to image_tag('twitter.png', :size=>'20x20') %></li>
+			<li><%= link_to image_tag('mail-icon.png', :size=>'20x20') %></li>
+			
+		</ul>
+	</div>  
+ </div>
+	<script>
+		$(".input-command").next().not(':first').hide('fast');
+	</script>

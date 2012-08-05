@@ -1,0 +1,16 @@
+<% unless @current_tutorial[:show_success_for].blank? %>
+  Excellent, you succesfully executed the <%= @current_tutorial[:show_success_for] %> command. 
+<% end %>
+
+<% unless @current_tutorial[:show_discovered_for].blank? %>
+  Looks like you just discovered the  <%= @current_tutorial[:show_discovered_for] %> command.
+<% end %>
+
+<% unless @current_tutorial[:completed_summary].blank? %>
+  Welcome back. So far you have succesfully executed the following commands:
+  <ul>
+    <% @current_tutorial[:completed_summary].split(',').each do |completed_commands| %>
+      <li><%= completed_commands %></li>
+	<% end %>
+  </ul>
+<% end %>

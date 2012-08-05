@@ -1,0 +1,24 @@
+<div class ="bookmarks_result">
+  <table>
+  	
+	<% @results[:data].each do |result| %>
+	  	<tr>
+		  	 <td>
+		  	  	<span><%= result[:name]%></span>
+			 </td>
+			  <td>
+			  <% if result[:tags].length != 0  %>	
+			  	Tags:
+			  <% else %>
+			  	no tags available. 
+			  <% end %>
+		       <% result[:tags].find_each do |tag|%>
+		       		<%= link_to tag.name,user_tagged_with_path(current_user,:query => "#{tag.name}"),:remote => true,:class=>'tags' %>
+				<%end%>
+		      </td>
+		  
+		 </tr>
+	 <%end%>
+   </table>
+</div>
+

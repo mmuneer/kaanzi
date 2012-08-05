@@ -1,0 +1,17 @@
+search:
+  search: defaultSearch
+weather: getWeather
+-w: getWeather
+calculate: calculate
+define: dictionaryLookup
+eat: eatMethod
+direction: direction
+flickr: mostRecentPhotos
+help: helpCommand
+wiki: wiki
+cd: changeDomain
+change:
+  domain: changeDomain
+cd\: homeDomain
+twitter:
+  search: searchTwitter

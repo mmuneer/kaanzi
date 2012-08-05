@@ -1,0 +1,139 @@
+<%= javascript_include_tag '/javascripts/command_control' %>
+<%= javascript_include_tag '/javascripts/cmd_history' %>
+
+<div id ="tutorial" class="tutorial"></div>
+
+<%= render :partial => 'tutorial.js' %>
+
+<%= form_for @request, :html => { :method => :get }, :remote => true do |f|  %>
+  <div id="input-container">
+    <div id="command-box-container">
+	 
+	   <label id="prompt-label" class="prompt-label"><%= @current_domain %>></label>
+	  <span id='prompt-display'>
+	    <span id='cursor-span' class='cursor-span-blink'>&nbsp;</span>
+	  </span>
+	  <div style="padding-left:15px;;margin-top:-15px;">
+	    <%=  f.text_field :name, :placeholder => '' %>
+      </div>
+	</div>
+ 
+  </div>
+<%end%>
+
+<div id= "ajax-indicator" style= "display:none;" >
+  <span>loading...</span>		        	
+</div>
+
+<div class="output-outer">
+<a href="#" class="collapse-all">Collapse all</a>
+
+<div id ="output" >
+
+</div>
+</div>
+
+
+<div id = "create_event_dialog">
+  <div id = "create_event">
+  </div>
+</div>
+
+<div id="about-section">
+	<h2>The world of commands</h2>
+	<p>
+		Hello world! We are 3 developers from Dallas. The web has come across a long since its birth. Now we use it for so many purposes. We check emails, look for direction, check on our friends in facebook the possiblities are endless. However, all these perks come with a catch. All these information are still scattered and comes with a lot of noise.
+	</p>
+	<p>
+		We feel web can be browsed in a better way,with much more ease and much less noise. Kaanzi is our approach  of interacting with the web. We have tried to bring many fun services under one umbrella through a bunch of fun commands. Use ‘flickr recent’ command to see all the recent uploaded pictured from Flickr. Direction command will give google direction .
+		So, type away and let us know your thoughts, comments and concerns!!
+	</p>
+	<p>
+		Some of the commands in the site are still mockups.The site only supports firefox 3.6 above and chrome for now.
+	</p> 
+</div>
+
+<div class="help-section">
+  <h1>Help</h1>  
+  <h2>Commands</h2>
+  <h3><a href="#">Twitter</a></h3>
+  <ul>
+  	<li>login twitter</li>
+  	<li>post twitter status "..." <small>e.g. post twitter status Hello World!</small></li>
+  	<li>read twitter stream</li>
+  	<li>find twitter</li>
+  </ul>
+  <h3><a href="#">Facebook</a></h3>
+  <ul>
+  	<li>login facebook</li>
+  	<li>list friends</li>
+  	<li>list facebook friends</li>
+  	<li>select "FB friend name" <small>e.g. select John Moore</small></li>
+  	<li>post facebook status "..." <small>e.g. post facebook status Hellow World!</small></li>
+  	<li>find facebook</li>
+  </ul>
+  
+  <h3><a href="#">Search</a></h3>
+  <ul>
+  	<li>yellowpage/yelp/yp "business name" near "address" <small>e.g. yelp pizza near 76010</small></li>
+  	<li>search gmail</li>
+  	<li>search facebook</li>
+  	<li>find place "place name" <small>e.g. find place parks. you can also try find -p parks</small></li>
+  	<li>find business</li>
+  	<li>find restaurants</li>
+  	<li>find bars</li>
+  	<li>find gyms</li>
+  </ul>
+  
+  
+  <h3><a href="#">Weather</a></h3>
+  <ul>
+  	<li>weather 53718 or weather at/near/in 53718</li>
+  </ul>
+  
+  <h3><a href="#">Direction</a></h3>
+  <ul>
+  	<li>direction from 53718 to 53719</li>
+  </ul>
+  
+  <h3><a href="#">Flickr</a></h3>
+  <ul>
+  	 <li>flickr recent</li>
+  </ul>
+  
+  <h3><a href="#">Knowledgebase</a></h3>
+  <ul>
+  	  <li>meaning/dictionary/definition "word" <small>e.g. dictionary amazing</small></li>
+  	  <li>define "word" <small>e.g. define love</small></li>
+  	  <li>what is "word" <small>e.g. what is love</small></li>
+  	  <li>lookup "word" <small>e.g. lookup love</small></li>
+  </ul>
+  
+  <h3><a href="#">Other Commands</a></h3>
+  <ul>
+  	 <li>calculate "equation" <small>e.g. calculation 2+2*3</small></li>
+  	 <li>say "message" <small>e.g. say Hello!!!</small></li>
+  	 <li>open "valid url"  <small>e.g. open http://www.kaanzi.com</small></li>
+  	 <li>eat</li>
+  	 
+  </ul>
+  
+  <h3><a href="#">Worksheet of your activity</a></h3>
+  <ul>
+  	 <li>history</li>
+  </ul>
+  
+  <h3><a href="#">Bookmarks</a></h3>
+  <ul>
+  	  <li>bookmarks</li>
+  </ul>
+  
+  <h3><a href="#">Utilities</a></h3>
+  <ul>
+  	<li>traffic "address" <small>e.g. traffic 53718</small></li>
+  	<li>track flight "flight no" <small>e.g. track flight UA123</small></li>
+  </ul>
+  
+
+</div>
+

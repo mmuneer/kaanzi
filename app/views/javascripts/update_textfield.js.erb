@@ -1,0 +1,9 @@
+jQuery(document).ready(function() {
+   $(".links").live("click", function(i) {
+      new_val = $(this).text();
+      $("#command_name").val(new_val);
+      $("#command_name").focus();
+    });
+    
+
+});

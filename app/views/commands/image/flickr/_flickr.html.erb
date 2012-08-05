@@ -1,0 +1,24 @@
+<div class="flickr-list">
+	<h2>Most Recent Photos</h2> 	
+	<ul>
+	  <% for i in 0...@results[:data][:data]["photos"]["photo"].length %>
+	  	<% if (@results[:data][:data]["photos"]["photo"][i]["ispublic"] == 1 && (@results[:data][:data]["photos"]["photo"][i]["url_sq"])) %>
+	  		<li>
+	  			<a class="lightbox" href="<%= @results[:data][:data]["photos"]["photo"][i]["url_m"] %>" title='<%= link_to @results[:data][:data]["photos"]["photo"][i]["title"],"http://www.flickr.com/photos/"+@results[:data][:data]["photos"]["photo"][i]["owner"] %>'><%= image_tag (@results[:data][:data]["photos"]["photo"][i]["url_sq"].to_s)  %></a>
+	  		</li>
+	  	<% end %>
+	  <% end %>
+	</ul>
+</div>
+
+<script type="text/javascript">
+$(function() {
+	
+	$('a.lightbox').lightBox({fixedNavigation:true}); // Select all links with lightbox class
+	
+    $('img').load(function() {
+        $('li').css('display','inline');
+    });
+
+});
+</script>

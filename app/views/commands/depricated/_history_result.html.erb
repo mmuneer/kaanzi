@@ -1,0 +1,16 @@
+<div class = "history-result">
+ 
+ <table>
+ 	<% @results[:data].each do |result| %>
+	<tr>
+		<td>
+			<%= link_to result[:name], "#",:class => 'links' %>
+		</td>
+		<td>
+			<%= result[:date].to_formatted_s(:long) %>
+		</td>
+	</tr>
+	<%end%>
+  </table>
+  
+</div>

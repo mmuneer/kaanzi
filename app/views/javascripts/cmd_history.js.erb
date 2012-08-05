@@ -1,0 +1,74 @@
+jQuery(document).ready(function() {
+   var commands = new Array();
+   <% unless current_user.nil?%>
+     <% current_user.commands.each do |cmd| %>
+   	  
+        commands.push("<%= cmd.name + " " + cmd.params %>")
+      
+     <%end%>
+   <%end%>
+   var latest = commands.length - 1;
+   $(document).keydown(function (e) {
+      var keyCode = e.keyCode || e.which,
+      arrow = {up: 38,down: 40, enter:13,page_up: 33, page_down: 34 };
+	  
+	  if(e.keyCode == arrow.enter){
+	  	commands.push($("#command_name").val())
+	  }
+	  
+	  if(e.keyCode == 8){
+		if($("#command_name").is(":focus")){
+		
+		}else{
+			e.preventDefault();
+		}
+	  }
+	  
+	  if(e.keyCode == 13){
+		if($("#command_name").is(":focus")){
+		  //clear_command();
+		}
+	  }
+	  
+	   if((e.ctrlKey && e.keyCode == arrow.up) || e.keyCode == arrow.page_up){
+	    e.preventDefault();
+	    if(latest == commands.length - 1){
+			clear_command()
+		}
+		else{
+		    latest++;
+			toggle_command(commands,latest)
+			
+		}
+		return false;
+	 }
+      if((e.ctrlKey && e.keyCode == arrow.down) || e.keyCode == arrow.page_down){
+	    e.preventDefault();
+	    if(latest == 0){
+			clear_command()
+	  		
+		}
+		else{
+		    latest--;
+			toggle_command(commands,latest)
+			
+		}
+		
+		return false;
+      }
+  
+	}); 
+});
+
+ function toggle_command(commands,index){
+    new_val = commands[index]
+ 	$("#command_name").val(commands[index]);
+    $("#command_name").focus();
+	$('#command_name').trigger("keydown"); 
+ }
+ 
+ function clear_command(){
+ 	new_val = $("#command_name").val("");
+    $("#command_name").focus();
+	$('#command_name').trigger("keydown"); 
+ }

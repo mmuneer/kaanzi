@@ -1,0 +1,22 @@
+<div id="twitter_stream_result">
+	
+	<div class="content-header">
+		<div class="header-inner">
+	       <h2>Tweets</h2>
+	     </div>
+	</div>
+
+	<div class="stream_container">
+		<% @results[:data].each do |item| %>
+			<div class="stream_item">
+				<div class="twitter-profile-img" style="padding-right: 6px;"><%= image_tag(item[:profile_image_url], :size => '64x64', :border => 0) %></div>
+				 
+				 <div>
+					 <strong><%= link_to item[:user],"http://www.twitter.com/"+item[:user], :target=>'_blank' %></strong>&nbsp;<span class="user-name">@<%= item[:user] %></span>
+					 <p class="tweet"><%= Rinku.auto_link(item[:text].to_s, :all,'target=_blank, skip_tags=nil').html_safe %></p>
+				 </div>
+			</div>		 
+		<% end %>
+	</div>
+
+</div>

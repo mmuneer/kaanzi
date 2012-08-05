@@ -1,0 +1,16 @@
+<script>
+
+	if($("#output", window.opener.document).children().size() > 0)
+    {
+	  $("#output", window.opener.document).prepend("<%= escape_javascript render :partial => @results[:partial] %>");
+	  $("#output", window.opener.document).prepend("<%= escape_javascript render :partial => 'input_command' %>");
+	}
+	else
+	{
+	  $("#output", window.opener.document).html("<%= escape_javascript render :partial => 'input_command' %>");
+	  $("#output", window.opener.document).append("<%= escape_javascript render :partial => @results[:partial] %>");
+	}
+	
+	window.close();
+	
+</script>

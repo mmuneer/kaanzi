@@ -1,0 +1,10 @@
+if($("#output").children().size() > 0)
+{
+  $("#output").prepend("<%= escape_javascript render :partial => 'track_flight_result' %>");
+  $("#output").prepend("<%= escape_javascript render :partial => 'input_command' %>");
+}
+else
+{
+  $("#output").html("<%= escape_javascript render :partial => 'input_command' %>");
+  $("#output").append("<%= escape_javascript render :partial => 'track_flight_result' %>");
+}

@@ -1,0 +1,35 @@
+<div class="weather-info">
+  <h2>Weather for <%= @results[:data][:location].to_s() %></h2>
+  
+  <table cellspacing="2">
+    <tr>
+	  <td class="current-weather-cell">
+	    <h3><%= @results[:data][:data]["current_condition"].first["temp_F"].to_s() %>F | <%= @results[:data][:data]["current_condition"].first["temp_C"].to_s() %>C</h3>
+        Current: <b><%= @results[:data][:data]["current_condition"].first["weatherDesc"].first["value"].to_s() %></b>
+        <br/>
+        Wind: <%= @results[:data][:data]["current_condition"].first["winddir16Point"].to_s() %> at <%= @results[:data][:data]["current_condition"].first["windspeedMiles"].to_s() %> mph
+        <br/>
+        Humidity: <%= @results[:data][:data]["current_condition"].first["humidity"].to_s() %>%
+	  </td>
+	  
+	   <% for i in 0...@results[:data][:data]["weather"].length %>
+		  <td class="future-weather-cell">
+	
+		      <h3><%= Date.parse(@results[:data][:data]["weather"][i]["date"]).strftime("%a") %></h3>
+			  <%= image_tag("#{@results[:data][:data]["weather"][i]["weatherIconUrl"].first["value"]}", :height => '60', :style => 'max-width: 60px;', :alt => "weather condition image")%>
+		      <br/>
+			  High: <%= @results[:data][:data]["weather"][i]["tempMaxF"].to_s() %>F | <%= @results[:data][:data]["weather"][i]["tempMaxC"].to_s() %>C
+			  <br/>
+		      Low: <%= @results[:data][:data]["weather"][i]["tempMinF"].to_s() %>F | <%= @results[:data][:data]["weather"][i]["tempMinC"].to_s() %>C
+		    
+		  </td>
+	  <% end %>
+	  
+	  
+	  
+	 
+	</tr>
+  </table>
+  
+  
+</div>
